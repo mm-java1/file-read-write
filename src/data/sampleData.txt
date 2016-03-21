@@ -1,0 +1,7 @@
+This course is an introduction to programming in Java.
+Topics include fundamentals of Java programming, including object-oriented programming, primitive data types, control structures, methods, objects, classes, class inheritance, simple graphical user interface and event-driven programs using Swing.
+Object-oriented design using the Unified Modeling Language will also be introduced.
+
+This course is an excellent course both in terms of work force relevance and continuing education.
+Java is widely used in industry and is syntactically very similar to many other popular languages such as C#, JavaScript and Ruby.
+Java is also widely used in educational settings and if you intend to earn a higher degree, this course may transfer to cover the introductory object oriented programming course common at many other institutions.
