@@ -5,7 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * Created by marymosman on 3/21/16.
+ * This class will read Strings from an ArrayList and write them
+ * one per line to a file.
  */
 public abstract class ListFileWriter {
 

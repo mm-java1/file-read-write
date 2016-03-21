@@ -5,7 +5,8 @@ import java.net.URL;
 import java.util.ArrayList;
 
 /**
- * This class will read sentences from a file and store them in an ArrayList. The file must have one sentence per line.
+ * This class will read sentences from a file and store them in an ArrayList.
+ * The file must have one sentence per line.
  *
  * Punctuation at the end of the sentence will not be removed.
  */
@@ -14,7 +15,7 @@ public abstract class FileParser {
     public static ArrayList<String> parseFile(String fileName) throws IOException {
 
         // Complete this method so that the test below in the main method is correct.
-        
+
     }
 
     public static void main(String[] args){

@@ -4,7 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
- * Created by marymosman on 3/21/16.
+ * This is a utility class to compare files.
+ * It is based on an example from the textbook.
  */
 public class FileCompareUtil {
 
