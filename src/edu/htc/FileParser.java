@@ -12,9 +12,32 @@ import java.util.ArrayList;
  */
 public abstract class FileParser {
 
-    public static ArrayList<String> parseFile(String fileName) throws IOException {
 
-        // Complete this method so that the test below in the main method is correct.
+    public static ArrayList<String> parseFile(String path) throws IOException {
+
+        BufferedReader br = new BufferedReader(new FileReader(path));
+        ArrayList<String> stuff = new ArrayList<String>();
+        String line;
+
+
+
+        for(int i = 0; i < 7; i++) {
+
+            if ((line = br.readLine()) != null) {
+
+                line = line.trim();
+                System.out.println(line);
+                if (!line.equals("")) {
+                    stuff.add(line);
+                }
+
+
+            }
+        }
+
+        return stuff;
+
+
 
     }
 
@@ -32,6 +55,7 @@ public abstract class FileParser {
             System.out.println("An error occurred reading the file.");
             System.out.println(e.getMessage());
         }
+
 
         //System.out.println(stuff);
 
