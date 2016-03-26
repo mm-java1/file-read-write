@@ -10,10 +10,17 @@ import java.util.ArrayList;
  */
 public abstract class ListFileWriter {
 
+
     public static void writeToFile(ArrayList<String> list, String fileName) throws IOException {
+        FileWriter fw = new FileWriter(fileName);
+        int i;
 
-        // Complete this method so that the test below in the main method is correct.
-
+        for (i=0; i<list.size(); i++){
+            if (!list.get(i).equals("")) {
+                fw.write(list.get(i) + "\r\n");
+            }
+        }
+        fw.close();
     }
 
     public static void main(String[] args) throws IOException{
@@ -25,7 +32,7 @@ public abstract class ListFileWriter {
         stuff.add("This is a test string.");
 
         String current = new java.io.File( "." ).getCanonicalPath();
-        String path = current + "/myOutput.txt";
+        String path = current + "\\src\\data\\myOutput.txt";
         try {
             ListFileWriter.writeToFile(stuff, path);
         } catch (IOException e){
