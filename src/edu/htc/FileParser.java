@@ -32,14 +32,11 @@ public abstract class FileParser {
                         blnExit = true;
                     }
                 }
-
             }
         } finally {
             reader.close();
             return strReturn;
         }
-
-
     }
 
     public static void main(String[] args){
