@@ -12,7 +12,15 @@ public abstract class ListFileWriter {
 
     public static void writeToFile(ArrayList<String> list, String fileName) throws IOException {
 
-        // Complete this method so that the test below in the main method is correct.
+        FileWriter fWrite = new FileWriter(fileName);
+                int i;
+
+                for (i=0; i<list.size(); i++){
+                        if (!list.get(i).equals("")) {
+                                fWrite.write(list.get(i) + "\r\n");
+                            }
+                    }
+                fWrite.close();
 
     }
 
@@ -25,7 +33,7 @@ public abstract class ListFileWriter {
         stuff.add("This is a test string.");
 
         String current = new java.io.File( "." ).getCanonicalPath();
-        String path = current + "/myOutput.txt";
+        String path = current + "\\src\\data\\myOutput.txt";
         try {
             ListFileWriter.writeToFile(stuff, path);
         } catch (IOException e){
@@ -33,7 +41,7 @@ public abstract class ListFileWriter {
             System.out.println(e.getMessage());
         }
 
-        //System.out.println(stuff);
+        System.out.println(stuff);
 
         // Verify new file exists
         File newFile = new File(path);

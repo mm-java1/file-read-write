@@ -11,10 +11,28 @@ import java.util.ArrayList;
  * Punctuation at the end of the sentence will not be removed.
  */
 public abstract class FileParser {
+    public static FileInputStream fileIn = null;
 
     public static ArrayList<String> parseFile(String fileName) throws IOException {
 
-        // Complete this method so that the test below in the main method is correct.
+        ArrayList<String> fileArray = new ArrayList<>();
+                int i;
+
+                        BufferedReader fReader = new BufferedReader(new FileReader(fileName));
+
+                        while (true) {
+                        String line = fReader.readLine();
+                        if (line == null) {
+                                break;
+                            }
+                        line.trim();
+                                if (!line.equals("")) {
+                                fileArray.add(line);
+                            }
+                    }
+                        fReader.close();
+
+                return fileArray;
 
     }
 
@@ -24,6 +42,10 @@ public abstract class FileParser {
         ArrayList<String> stuff = null;
         try {
             URL path = ClassLoader.getSystemResource("data/sampleData.txt");
+            if (path != null) {
+                fileIn = new FileInputStream(path.getFile());
+                stuff = FileParser.parseFile(path.getFile());
+            }
             stuff = FileParser.parseFile(path.getFile());
         } catch (FileNotFoundException e){
             System.out.println("Could not find file!");
@@ -33,7 +55,7 @@ public abstract class FileParser {
             System.out.println(e.getMessage());
         }
 
-        //System.out.println(stuff);
+        System.out.println(stuff);
 
         // Verify array list
         if (stuff.size() == 6){
