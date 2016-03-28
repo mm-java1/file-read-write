@@ -15,8 +15,27 @@ public abstract class FileParser {
     public static ArrayList<String> parseFile(String fileName) throws IOException {
 
         // Complete this method so that the test below in the main method is correct.
+        ArrayList<String> fileArray = new ArrayList<String>();
 
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+
+        while (true) {
+            String str = br.readLine();
+            if (str == null) {
+                break;
+            }
+            str.trim();
+            if (!str.equals("")) {
+                fileArray.add(str);
+            }
+        }
+
+        br.close();
+        return fileArray;
     }
+
+
+
 
     public static void main(String[] args){
 
