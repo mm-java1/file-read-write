@@ -13,7 +13,14 @@ public abstract class ListFileWriter {
     public static void writeToFile(ArrayList<String> list, String fileName) throws IOException {
 
         // Complete this method so that the test below in the main method is correct.
+        FileWriter fileWriter = new FileWriter(fileName);
 
+        for (int i = 0; i < list.size(); i++){
+            if(!list.get(i).equals("")){
+                fileWriter.write(list.get(i) + "\r\n");
+            }
+        }
+        fileWriter.close();
     }
 
     public static void main(String[] args) throws IOException{
