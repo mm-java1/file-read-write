@@ -13,9 +13,24 @@ import java.util.ArrayList;
 public abstract class FileParser {
 
     public static ArrayList<String> parseFile(String fileName) throws IOException {
-
+        ArrayList<String> fileLines = new ArrayList<String>();
         // Complete this method so that the test below in the main method is correct.
+// Construct BufferedReader from FileReader
+        BufferedReader reader = new BufferedReader(new FileReader(fileName));
 
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            if(line.length() != 0) {
+                fileLines.add(line);
+
+            }
+        }
+
+
+        reader.close();
+
+        Main.dataFromFile = fileLines;
+        return fileLines;
     }
 
     public static void main(String[] args){
@@ -56,6 +71,7 @@ public abstract class FileParser {
         } else {
             System.out.println("The sentences should be trimmed before adding to the array list.");
         }
+
     }
 
 }
