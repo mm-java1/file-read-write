@@ -10,11 +10,36 @@ import java.util.ArrayList;
  */
 public abstract class ListFileWriter {
 
-    public static void writeToFile(ArrayList<String> list, String fileName) throws IOException {
+    public static void writeToFile(ArrayList<String> stuff, String myOutput) throws IOException {
 
-        // Complete this method so that the test below in the main method is correct.
+        FileWriter fw = new FileWriter(myOutput);
+
+        for(String s : stuff){
+            s = s.trim();
+            if(!s.equals("") && s != null){
+                fw.write(s + "\n");
+
+            }
+
+
+        }
+
+        fw.close();
+
+
+
+
 
     }
+
+
+
+
+
+
+
+
+
 
     public static void main(String[] args) throws IOException{
 
