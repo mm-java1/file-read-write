@@ -13,6 +13,18 @@ public abstract class ListFileWriter {
     public static void writeToFile(ArrayList<String> list, String fileName) throws IOException {
 
         // Complete this method so that the test below in the main method is correct.
+        /*BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+        for(int i = 0; i < list.size(); i++){
+            bw.write(list.get(i) + "\n");
+        }
+        bw.close();*/
+
+        FileWriter fw = new FileWriter(fileName);
+        for(int i = 0; i < list.size(); i++){
+            fw.write(list.get(i) + "\r\n");
+        }
+        fw.close();
+
 
     }
 
